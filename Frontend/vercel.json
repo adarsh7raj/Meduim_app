@@ -1,1 +1,2 @@
-{"rewrites":[{"soruce":"/(.*)","destination":"/"}]}
+{"rewrites":[{"destination":"/"}]
+}
