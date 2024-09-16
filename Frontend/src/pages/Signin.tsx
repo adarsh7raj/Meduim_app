@@ -17,7 +17,7 @@ export const Signin=function(){
             console.log(token);
             localStorage.setItem("JWT",token);
             alert("Signed in Successfully");
-            navigate("/blog");
+            navigate("/blogs");
         }
     catch(e){
         console.log(e);

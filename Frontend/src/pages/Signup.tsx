@@ -16,7 +16,7 @@ export const Signup=function(){
         console.log(token);
         localStorage.setItem("JWT",token);
         alert("Signup Successfull");
-        navigate("/blog");
+        navigate("/blogs");
     }
 catch(e){
     alert("Error while signingup")
