@@ -1,4 +1,4 @@
-import {Auth} from "../components/auth";
+
 import { Input } from "../components/input";
 import { useState } from "react";
 import { Signin_type } from "@adarsh7/medium_app";

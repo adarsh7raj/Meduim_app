@@ -1,6 +1,5 @@
-import { ChangeEvent, ChangeEventHandler } from "react";
-import {Auth} from "./auth"
-import { Signup_type } from "@adarsh7/medium_app";
+import { ChangeEvent} from "react";
+
 interface Label_input {
     placeholder: string;
     label: string;
