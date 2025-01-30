@@ -9,21 +9,23 @@ import {useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(function(){
-    const token=localStorage.getItem("JWT");
+  useEffect(() => {
+    const token = localStorage.getItem("JWT");
     setIsAuthenticated(!!token);
-  },[])
+  }, []);
+
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={isAuthenticated?<Navigate to={"/blogs"}></Navigate>:<LandingPage></LandingPage>}/>
+          <Route path="/" element={isAuthenticated?<Navigate to={"/blogs"}/>:<LandingPage/>}/>
+          <Route path="/landing" element={<LandingPage/>}></Route>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/blog/:id" element={isAuthenticated?<Blog  />:<LandingPage></LandingPage>} />
-          <Route path="/blogs" element={isAuthenticated?<Blogs/>:<LandingPage></LandingPage>}/>
-          <Route path="/publish" element={isAuthenticated?<Publish/>:<LandingPage></LandingPage>}/>
+          <Route path="/blog/:id" element={isAuthenticated?<Blog/>:<LandingPage/>} />
+          <Route path="/blogs" element={isAuthenticated?<Blogs/>:<LandingPage/>}/>
+          <Route path="/publish" element={isAuthenticated?<Publish/>:<LandingPage/>}/>
         </Routes>
       </BrowserRouter>
     </>
