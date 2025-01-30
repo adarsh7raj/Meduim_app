@@ -12,7 +12,7 @@ function App() {
   useEffect(function(){
     const token=localStorage.getItem("JWT");
     setIsAuthenticated(!!token);
-  })
+  },[])
 
   return (
     <>
