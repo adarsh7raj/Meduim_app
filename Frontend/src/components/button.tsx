@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent } from "react";
+import {  MouseEvent } from "react";
 
 
 interface Button_type{
