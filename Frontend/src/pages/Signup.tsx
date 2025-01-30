@@ -12,11 +12,16 @@ export const Signup=function(){
  const f1=async function (){
     try{
         const response=await axios.post(`${BACKEND_URL}/api/v1/user/signup`,user_inputs);
-        const token=response.data.message;
-        console.log(token);
-        localStorage.setItem("JWT",token);
-        alert("Signup Successfull");
-        navigate("/blog");
+        const token=response.data.token;
+        if(token){
+            console.log(token);
+            localStorage.setItem("JWT",token);
+            alert("Signup Successfull");
+            navigate("/blogs");
+        }
+       else{
+        alert(response.data.message);
+       }
     }
 catch(e){
     alert("Error while signingup")

@@ -7,6 +7,7 @@ import { SigninSchema } from "@adarsh7/medium_app";
 export const userRouter = new Hono<{ Bindings: { DATABASE_URL: string, JWT_SECRET: string } }>();
 
 
+
 userRouter.post("/signup", async function(c) {
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL
@@ -25,7 +26,7 @@ userRouter.post("/signup", async function(c) {
      
        const token = await sign({ id: value.id,user:value.name }, c.env.JWT_SECRET);
        
-       return c.json({ message: token });
+       return c.json({ token: token });
       }
     }
     else{
@@ -49,7 +50,7 @@ if(data.success){
   if (value) {
     const token =await sign({id:value.id,user:value.name},c.env.JWT_SECRET);
     console.log(token);
-    return c.json({message:token});   // if write like this c.json({}) it throw a error
+    return c.json({token:token});   // if write like this c.json({}) it throw a error
    // return c.json({ message:token });
   } else {
     return c.json({ message: "Invalid credentials" }); 

@@ -13,11 +13,17 @@ export const Signin=function(){
     async function send_request(){
         try{
             const response=await axios.post(`${BACKEND_URL}/api/v1/user/signin`,post_inputs);
-            const token=response.data.message;
-            console.log(token);
-            localStorage.setItem("JWT",token);
-            alert("Signed in Successfully");
-            navigate("/blog");
+            const token=response.data.token;
+            if(token){
+                console.log(token);
+                localStorage.setItem("JWT",token);
+                alert("Signed in Successfully");
+                navigate("/blogs");
+            }
+            else{
+                alert(response.data.message);
+            }
+  
         }
     catch(e){
         console.log(e);

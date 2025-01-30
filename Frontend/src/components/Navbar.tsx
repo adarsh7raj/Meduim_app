@@ -10,7 +10,7 @@ const Navbar = () => {
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
          <Link to="/signup"><button className="bg-black text-white px-4 py-2 rounded-lg">Sign Up</button></Link> 
-        <Link to="/signin"> <button className="bg-black text-white px-4 py-2 rounded-lg">Login in</button></Link> 
+        <Link to="/signin"> <button className="bg-black text-white px-4 py-2 rounded-lg">Login</button></Link> 
         </div>
       </div>
     </nav>
